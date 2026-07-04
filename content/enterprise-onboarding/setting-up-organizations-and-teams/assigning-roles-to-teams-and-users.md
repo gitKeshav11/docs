@@ -1,10 +1,12 @@
 ---
 title: Assigning roles to teams and users
 shortTitle: Assign roles
-intro: 'Assign enterprise roles to manage access and permissions.'
+intro: Assign enterprise roles to manage access and permissions.
 versions:
   ghec: '*'
-type: how_to
+contentType: how-tos
+docsTeamMetrics:
+  - enterprise-onboarding
 ---
 
 {% data reusables.enterprise-onboarding.assign-roles %}

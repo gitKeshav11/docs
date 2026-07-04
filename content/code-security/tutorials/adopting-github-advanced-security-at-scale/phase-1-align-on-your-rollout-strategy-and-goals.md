@@ -1,16 +1,15 @@
 ---
 title: 'Phase 1: Align on your rollout strategy and goals'
-intro: '{% ifversion ghas-products %}Before enabling {% data variables.product.prodname_GH_code_security %} and {% data variables.product.prodname_GH_secret_protection %} features, plan how these GHAS products should be rolled out across your enterprise.{% else %}Before enabling {% data variables.product.prodname_code_scanning %} and {% data variables.product.prodname_secret_scanning %}, plan how GHAS should be rolled out across your enterprise.{% endif %}'
+intro: 'Before enabling {% data variables.product.prodname_GH_code_security %} and {% data variables.product.prodname_GH_secret_protection %} features, plan how these GHAS products should be rolled out across your enterprise.'
 versions:
   ghes: '*'
   ghec: '*'
-topics:
-  - Code Security
-  - Secret Protection
 shortTitle: 1. Align on strategy
 redirect_from:
   - /code-security/adopting-github-advanced-security-at-scale/phase-1-align-on-your-rollout-strategy-and-goals
 contentType: tutorials
+category:
+  - Plan your security strategy
 ---
 
 > [!TIP]

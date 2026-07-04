@@ -1,6 +1,6 @@
 ---
 title: Installing GitHub Enterprise Server on VMware
-intro: 'To install {% data variables.product.prodname_ghe_server %} on VMware, you must download the VMware vSphere client, and then download and deploy the {% data variables.product.prodname_ghe_server %} software.'
+intro: To install {% data variables.product.prodname_ghe_server %} on VMware, you must download the VMware vSphere client, and then download and deploy the {% data variables.product.prodname_ghe_server %} software.
 redirect_from:
   - /enterprise/admin/articles/getting-started-with-vmware
   - /enterprise/admin/articles/installing-vmware-tools
@@ -11,13 +11,10 @@ redirect_from:
   - /admin/installation/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-vmware
 versions:
   ghes: '*'
-type: tutorial
-topics:
-  - Administrator
-  - Enterprise
-  - Infrastructure
-  - Set up
 shortTitle: Install on VMware
+contentType: tutorials
+category:
+  - Install and configure your instance
 ---
 ## Prerequisites
 
@@ -26,6 +23,9 @@ shortTitle: Install on VMware
 * You will need access to a vSphere Client. If you have vCenter Server you can use the vSphere Web Client. For more information, see the VMware guide [Log in to vCenter Server by Using the vSphere Web Client](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vcenter-server-installation-and-setup-8-0.html).
 
 ## Hardware considerations
+
+>[!NOTE]
+>The root disk defaults to 200 GB. For non-cluster topologies, we recommend increasing it to 400 GB by updating the disk attributes in the OVF template before deployment.
 
 {% data reusables.enterprise_installation.hardware-considerations-all-platforms %}
 

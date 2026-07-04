@@ -1,10 +1,12 @@
 ---
 title: Creating enterprise apps
 shortTitle: Create enterprise apps
-intro: 'Create GitHub Apps that can access enterprise-level resources and automate workflows.'
+intro: Create GitHub Apps that can access enterprise-level resources and automate workflows.
 versions:
   ghec: '*'
-type: how_to
+contentType: how-tos
+docsTeamMetrics:
+  - enterprise-onboarding
 ---
 
 {% data reusables.enterprise-onboarding.create-enterprise-apps %}

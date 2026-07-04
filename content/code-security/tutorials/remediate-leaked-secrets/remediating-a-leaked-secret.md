@@ -3,11 +3,6 @@ title: Remediating a leaked secret in your repository
 shortTitle: Remediate a leaked secret
 allowTitleToDifferFromFilename: true
 intro: Learn how to respond effectively to a leaked secret in your {% data variables.product.github %} repository.
-topics:
-  - Secret scanning
-  - Secret Protection
-  - Alerts
-  - Repositories
 versions:
   fpt: '*'
   ghec: '*'
@@ -15,6 +10,8 @@ versions:
 redirect_from:
   - /code-security/secret-scanning/working-with-secret-scanning-and-push-protection/remediating-a-leaked-secret
 contentType: tutorials
+category:
+  - Protect your secrets
 ---
 
 ## Introduction
@@ -189,10 +186,3 @@ Dealing with secret leaks is often disruptive, complicated, and time-consuming. 
    * Regularly rotate secrets to minimize the impact of any potential leaks.
 1. Document incidents and remediation steps to help your team learn from past mistakes and improve future practices.
 1. Advocate for, and undertake, regular learning and security training. See, for example, [{% data variables.product.github %} Advanced Security](https://learn.microsoft.com/en-us/training/paths/github-advanced-security/) course from Microsoft Learn.
-
-## Further reading
-
-* [AUTOTITLE](/code-security/secret-scanning/introduction/about-secret-scanning)
-* [AUTOTITLE](/code-security/secret-scanning/introduction/about-push-protection)
-* [AUTOTITLE](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns)
-* [AUTOTITLE](/get-started/learning-about-github/about-github-advanced-security)

@@ -7,18 +7,14 @@ versions:
   ghes: '*'
   ghec: '*'
 contentType: reference
-topics:
-  - Code scanning
-  - Errors
-  - Troubleshooting
 children:
   - /alerts-in-generated-code
   - /automatic-build-failed
   - /c-sharp-compiler-unexpectedly-failing
-  - /cannot-enable-codeql-in-a-private-repository
+  - /private-repository-enablement
   - /analysis-takes-too-long
   - /fewer-lines-scanned-than-expected
-  - /enabling-default-setup-takes-too-long
+  - /default-setup-timeout
   - /advanced-security-must-be-enabled
   - /out-of-disk-or-memory
   - /resource-not-accessible

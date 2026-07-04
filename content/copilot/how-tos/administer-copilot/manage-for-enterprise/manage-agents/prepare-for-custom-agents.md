@@ -11,21 +11,14 @@ category:
   - Manage Copilot for a team
 ---
 
-Enterprise-level {% data variables.copilot.custom_agents_short %} are defined in a specific repository within an organization in your enterprise. Before you can create and use {% data variables.copilot.custom_agents_short %}, you need to create this repository and configure the relevant enterprise settings.
+Enterprise-level {% data variables.copilot.custom_agents_short %} are defined in a specific repository within an organization in your enterprise.
 
-## Creating a repository for your {% data variables.copilot.custom_agents_short %}
+Before you can create and use {% data variables.copilot.custom_agents_short %}, you need to create this repository and configure the relevant enterprise settings.
 
-1. Choose an organization in your enterprise to own the repository containing your enterprise-level {% data variables.copilot.custom_agents_short %}.
-1. Using the [{% data variables.copilot.custom_agents_short %} template repository](https://github.com/docs/custom-agents-template?ref_product=copilot&ref_type=engagement&ref_style=text&ref_plan=enterprise), create a new repository in your chosen organization named `.github-private`. Set the visibility of the repository as follows:
-     * To grant **read access to all members** of your enterprise, choose {% octicon "organization" aria-hidden="true" aria-label="organization" %} **Internal**.
-     * To **manually grant access after creation**, choose {% octicon "lock" aria-hidden="true" aria-label="lock" %} **Private**.
-1. Update the template README as needed. Consider including creation guidelines for {% data variables.copilot.custom_agents_short %} or compliance considerations specific to your enterprise.
+## Creating a repository for your enterprise governance
 
-## Enabling and protecting {% data variables.copilot.custom_agents_short %} in your enterprise
+1. Create a `.github-private` repository for your enterprise governance. If you don't already have a `.github-private` repo, see [AUTOTITLE](/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-agents/create-github-private-repo).
 
-{% data reusables.enterprise-accounts.access-enterprise %}
-{% data reusables.enterprise-accounts.ai-controls-tab %}
-1. In the "{% data variables.copilot.custom_agents_caps_short %}" section, select the **Select organization** {% octicon "triangle-down" aria-hidden="true" aria-label="triangle-down" %} dropdown menu, then click the organization that contains your {% data variables.copilot.copilot_custom_agent_short %} repository.
 1. To automatically configure a ruleset that allows only enterprise owners to edit {% data variables.copilot.agent_profiles %}, in the "Protect agent files using rulesets" section, click **Create ruleset**.
 
     > [!NOTE]
@@ -36,4 +29,4 @@ Enterprise-level {% data variables.copilot.custom_agents_short %} are defined in
 
 To reduce your administrative burden and empower your SMEs, you can delegate the creation and management of {% data variables.copilot.custom_agents_short %} in your enterprise by creating a team of AI managers. See [AUTOTITLE](/copilot/tutorials/roll-out-at-scale/establish-ai-managers).
 
-If you prefer to maintain full control over your enterprise's tooling to ensure security and compliance, you can create and manage {% data variables.copilot.custom_agents_short %} yourself. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/coding-agent/test-custom-agents).
+If you prefer to maintain full control over your enterprise's tooling to ensure security and compliance, you can create and manage {% data variables.copilot.custom_agents_short %} yourself. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/cloud-agent/test-custom-agents).

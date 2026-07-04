@@ -7,12 +7,8 @@ versions:
   ghes: '*'
   ghec: '*'
 contentType: reference
-topics:
-  - Code scanning
-  - Errors
-  - Troubleshooting
-  - SARIF
 children:
-  - /sarif-support-for-code-scanning
+  - /sarif-support
   - /troubleshoot-sarif-uploads
 ---
+

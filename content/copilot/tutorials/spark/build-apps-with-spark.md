@@ -27,7 +27,7 @@ This tutorial will guide you through the full lifecycle of building and deployin
 
 ### Prerequisites
 
-* A {% data variables.product.github %} account with {% data variables.copilot.copilot_pro_plus_short %} or {% data variables.copilot.copilot_enterprise_short %} license.
+* A {% data variables.product.github %} account with {% data variables.copilot.copilot_pro_plus_short %}, {% data variables.copilot.copilot_max_short %}, or {% data variables.copilot.copilot_enterprise_short %} license.
 
 ## Step 1: Create your web app
 
@@ -175,7 +175,7 @@ Any changes made to your spark prior to repository creation will be added to you
 
 There's a two-way sync between your spark and the repository, so changes made in either {% data variables.product.prodname_spark_short %} or the main branch of your repository are automatically reflected in both places.
 
-You can also create issues in your repository and assign them to {% data variables.copilot.copilot_coding_agent %} so it can draft pull requests for fixes and improvements.
+You can also create issues in your repository and assign them to {% data variables.copilot.copilot_cloud_agent %} so it can draft pull requests for fixes and improvements.
 
 ## Next steps
 

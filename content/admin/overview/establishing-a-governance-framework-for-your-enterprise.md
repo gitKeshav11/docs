@@ -1,15 +1,14 @@
 ---
 title: Establishing a governance framework for your enterprise
-intro: 'You can manage governance and compliance for your enterprise using features and tools available in {% data variables.product.prodname_enterprise %}.'
+intro: You can manage governance and compliance for your enterprise using features and tools available in {% data variables.product.prodname_enterprise %}.
 shortTitle: Governance framework
 allowTitleToDifferFromFilename: true
 versions:
   ghec: '*'
   ghes: '*'
-type: overview
-topics:
-  - Enterprise
-  - Fundamentals
+contentType: concepts
+category:
+  - Secure and govern your enterprise
 ---
 
 As an enterprise owner, you are responsible for maintaining a strong security posture, complying with regulations, mitigating risks, and protecting intellectual property, within your enterprise. {% data variables.product.company_short %} has tools that can help with that.
@@ -121,13 +120,11 @@ You may want to set up an approval process for better control over who in your e
 >[!NOTE] The implementation of these approval processes can potentially cause some friction, so it's important to ensure that your security management team has adequate coverage before proceeding.
 
 Approval processes are available for:
-* Bypasses of push protection—You can choose who is allowed to bypass push protection, and add a review and approval cycle for pushes containing secrets from all other contributors. For more information about **delegated bypass for push protection**, see [AUTOTITLE](/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/delegated-bypass-for-push-protection/about-delegated-bypass-for-push-protection).{% ifversion security-delegated-alert-dismissal %}
+* Bypasses of push protection—You can choose who is allowed to bypass push protection, and add a review and approval cycle for pushes containing secrets from all other contributors. For more information about **delegated bypass for push protection**, see [AUTOTITLE](/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/delegated-bypass-for-push-protection/about-delegated-bypass-for-push-protection).
 * Dismissals of alerts for {% data variables.product.prodname_code_scanning %}{% ifversion dependabot-delegated-alert-dismissal %}, {% data variables.product.prodname_dependabot %},{% endif %} and {% data variables.product.prodname_secret_scanning %}—You can provide additional control and visibility over alert assessment by ensuring that only designated individuals can dismiss (or close) alerts. For more information about **delegated alert dismissal**, see the following articles:
   * [AUTOTITLE](/code-security/code-scanning/managing-your-code-scanning-configuration/enabling-delegated-alert-dismissal-for-code-scanning){% ifversion dependabot-delegated-alert-dismissal %}
   * [AUTOTITLE](/code-security/dependabot/dependabot-alerts/enable-delegated-alert-dismissal){% endif %}
   * [AUTOTITLE](/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/enabling-delegated-alert-dismissal-for-secret-scanning)
-
-{% endif %}
 
 ## Identifying security vulnerabilities and errors
 

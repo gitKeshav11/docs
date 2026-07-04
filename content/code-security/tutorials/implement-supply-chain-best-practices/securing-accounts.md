@@ -1,21 +1,17 @@
 ---
 title: Best practices for securing accounts
-shortTitle: Securing accounts
+shortTitle: Secure accounts
 allowTitleToDifferFromFilename: true
 intro: Guidance on how to protect accounts with access to your software supply chain.
 versions:
   fpt: '*'
   ghec: '*'
   ghes: '*'
-topics:
-  - Organizations
-  - Teams
-  - SSH
-  - Security
-  - Accounts
 redirect_from:
   - /code-security/supply-chain-security/end-to-end-supply-chain/securing-accounts
 contentType: tutorials
+category:
+  - Secure your dependencies
 ---
 ## About this guide
 

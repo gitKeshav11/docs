@@ -1,13 +1,16 @@
 ---
 title: GitHub-hosted runners reference
 shortTitle: GitHub-hosted runners
-intro: 'Find information about {% data variables.product.github %}-hosted runners, including their specifications and customization options.'
+intro: Find information about {% data variables.product.github %}-hosted runners, including their specifications and customization options.
 versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
 redirect_from:
   - /actions/reference/github-hosted-runners-reference
+category:
+  - Set up runners
+contentType: reference
 ---
 
 {% ifversion ghes %}
@@ -62,6 +65,8 @@ Single-CPU runners follow the same concurrency model as other {% data variables.
 The job timeout for single-CPU runners is 15 minutes. If a job reaches this limit, the job is terminated and fails.
 
 ### {% data variables.actions.hosted_runner_caps %}s
+
+{% data variables.actions.hosted_runner_caps %}s are available for organizations and enterprises on {% data variables.product.prodname_team %} and {% data variables.product.prodname_ghe_cloud %} plans.
 
 {% data reusables.actions.about-larger-runners %}
 

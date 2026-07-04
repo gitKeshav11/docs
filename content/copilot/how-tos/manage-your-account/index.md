@@ -6,7 +6,6 @@ versions:
   feature: copilot
 children:
   - /get-started-with-a-copilot-plan
-  - /get-free-access-to-copilot-pro
   - /view-and-change-your-copilot-plan
   - /disable-copilot-free
   - /manage-policies

@@ -11,12 +11,9 @@ redirect_from:
   - /billing/using-the-new-billing-platform/viewing-your-subscriptions-and-billing-date
   - /billing/using-the-new-billing-platform/about-the-billing-cycle
   - /billing/managing-your-billing/about-the-billing-cycle
-topics:
-  - Billing
-  - Enterprise
-  - Team
-product: '{% data reusables.billing.enhanced-billing-platform-product %}'
 contentType: concepts
+category:
+  - Get started with billing
 ---
 
 Your billing experience depends on whether your products are metered, volume-based, or a combination of both. Some products, like {% data variables.product.prodname_enterprise %} and {% data variables.product.prodname_GHAS %}, can be either volume-based or metered, depending on when and how your account was created.
@@ -38,35 +35,32 @@ For example, if you started a paid plan or converted from a trial on the 15th of
 > [!NOTE]
 > From **December 1, 2025**, all self-serve, metered {% data variables.product.prodname_ghe_cloud %} accounts that pay by credit card will migrate to a **billing date** of 1st of the month. See [Billing date standardized to the first of the month for self-serve credit card metered Enterprise customers](https://github.blog/changelog/2025-11-17-billing-date-standardized-to-the-first-of-the-month-for-self-serve-credit-card-metered-enterprise-customers-now-generally-available/) in the changelog.
 
+## Billing cycle for {% data variables.copilot.sandbox %} during public preview
+
+During {% data variables.release-phases.public_preview %}, eligible accounts receive a **$10 monthly entitlement** for cloud sandbox usage in **June 2026**. The entitlement applies as follows:
+
+* Usage above the entitlement is metered against your standard billing cycle and billed on your normal billing date.
+* The entitlement is discontinued after June 2026. Pricing and packaging after the preview is subject to change.
+
 ## Billing cycles for volume-based products
 
 Volume-based licenses may follow a different billing cycle. These products are often billed based on the anniversary date of your subscription rather than by calendar month.
 
-You can switch between annual and monthly billing from the "Licensing" page under "Billing and licensing", see [AUTOTITLE](/copilot/how-tos/manage-your-account/view-and-change-your-copilot-plan#changing-your-billing-cycle).
-
 ## How mid-cycle changes affect your billing
 
-Mid-cycle changes to your account can affect your bill.
+Changes you make mid-cycle, such as adding or removing users, seats, or resources, can affect your bill. Some behaviors apply to both metered and volume-based billing; others are specific to one model.
 
-### Changes to metered products
+### Adding users or resources
 
-Metered products (such as {% data variables.product.prodname_actions %} minutes, {% data variables.product.prodname_registry %} storage, or {% data variables.product.prodname_codespaces %} compute) are billed based on your actual usage throughout the month. For more information on how usage is calculated for a specific product, see [Where to find usage details for specific products](#where-to-find-usage-details-for-specific-products).
-
-### Changes to volume-based products
-
-Volume-based products are billed per user, seat, or resource. Changes to these mid-cycle won’t always immediately change your bill—but they may affect your next invoice.
-
-#### Adding users or resources
-
-* **Add users or licenses**: For license-based products like {% data variables.product.prodname_copilot_short %}, {% data variables.product.prodname_enterprise %}, or {% data variables.product.prodname_GHAS %}, you'll be billed a **prorated amount** based on how many days remain in the current billing cycle.
+* **Add users or licenses**: For products like {% data variables.product.prodname_copilot_short %}, {% data variables.product.prodname_enterprise %}, or {% data variables.product.prodname_GHAS %}, you'll be billed a prorated amount for the added licenses based on how many days remain in the current billing cycle.
 * **Add organizations or repositories**: These will also result in **prorated charges**, which appear on your next invoice.
 
-#### Removing users or resources
+### Removing users or resources
 
-* **Remove users or seats**: The user’s access is revoked immediately, but you'll still be billed for the **full billing cycle**. Removing a user won't reduce your current bill.
+* **Remove users or seats**: The user's access is revoked immediately, but you'll still be billed for the **full billing cycle**. Removing a user won't reduce your current bill.
 * **Remove organizations or repositories**: Charges **stop immediately** when removed, but you'll still be billed for any usage **up to that point**.
 
-#### Transferring users or resources
+### Transferring users or resources
 
 * **Within the same billing account**: No double-billing. Moving users or resources between organizations under the same account is handled automatically.
 * **Between different billing accounts**: Each account is billed according to its own cycle. You may see charges in both accounts if the move overlaps billing periods.
@@ -79,5 +73,6 @@ Find product-specific guidance on how usage is calculated and billed.
 * [AUTOTITLE](/billing/managing-billing-for-your-products/managing-billing-for-github-codespaces/about-billing-for-github-codespaces)
 * [AUTOTITLE](/billing/managing-billing-for-your-products/managing-billing-for-github-packages/about-billing-for-github-packages)
 * [AUTOTITLE](/billing/managing-billing-for-your-products/managing-billing-for-github-copilot/about-billing-for-github-copilot)
+* [AUTOTITLE](/billing/concepts/product-billing/cloud-and-local-sandboxes)
 * [AUTOTITLE](/billing/managing-billing-for-your-products/managing-licenses-for-visual-studio-subscriptions-with-github-enterprise/about-visual-studio-subscriptions-with-github-enterprise#about-licenses-for-visual-studio-subscriptions-with-github-enterprise-cloud)
 * [AUTOTITLE](/billing/managing-billing-for-your-products/managing-billing-for-git-large-file-storage/about-billing-for-git-large-file-storage)

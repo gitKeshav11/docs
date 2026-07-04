@@ -20,10 +20,11 @@ The {% data variables.product.prodname_copilot_short %} usage metrics dashboard,
 
 * The {% data variables.product.prodname_copilot_short %} usage metrics dashboards are available at the **enterprise** and **organization** level.
 * The {% data variables.product.prodname_copilot_short %} usage metrics APIs support **enterprise-, organization-, and user-level** records.
+* Team-level totals are not pre-aggregated. They are constructed by joining the user-teams report with the per-user usage metrics report. See [AUTOTITLE](/copilot/reference/copilot-usage-metrics/team-level-metrics).
 
 ## Prerequisite
 
-IDE-based {% data variables.product.prodname_copilot_short %} usage metrics depend on **telemetry from users’ IDEs**. If a developer has disabled telemetry in their IDE, their IDE-based {% data variables.product.prodname_copilot_short %} activity will **not** appear in the dashboard, API reports, or exported data.
+IDE-based {% data variables.product.prodname_copilot_short %} usage metrics depend on **telemetry from users' IDEs**. If a developer has disabled telemetry in their IDE, their detailed IDE-based {% data variables.product.prodname_copilot_short %} activity, such as per-IDE, per-feature, and lines-of-code breakdowns, will **not** appear in the dashboard, API reports, or exported data. However, server-side telemetry may still surface these users in your active user counts even when client telemetry is unavailable.
 
 If you notice missing users or unexpectedly low adoption numbers, verify IDE telemetry settings before troubleshooting other causes.
 
@@ -77,3 +78,9 @@ The value `Unknown` appears in some API or export breakdowns when telemetry from
 | Model | Appears when the event lacks information identifying the model used. Some internal models (for example, `gpt-4o-mini`) may appear alongside `Unknown` when used for non-user-facing operations such as summarization or intent detection. |
 
 `Unknown` values are excluded from dashboard visualizations but appear in API and NDJSON data for completeness. The amount of `Unknown` data decreases as users upgrade to newer IDE and extension versions that send richer telemetry.
+
+## Users surfaced by server-side telemetry
+
+{% data variables.product.prodname_copilot_short %} usage metrics combine client-side and server-side telemetry to identify active users. Users confirmed as active through server-side telemetry, but for whom no client telemetry was received, are included in your active user totals (such as `daily_active_users`). However, their dimensional breakdowns (`totals_by_ide`, `totals_by_feature`, `totals_by_language_feature`, `totals_by_language_model`, `totals_by_model_feature`) and lines-of-code metrics will be empty.
+
+This means your top-level active user counts may be higher than the sum of users reflected in the breakdown arrays. This is expected behavior and does not indicate a data error.

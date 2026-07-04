@@ -56,7 +56,7 @@ npm run ai-tools -- --refine versioning --files content/path/to/file.md
 
 Refine versioning in a file:
 ```bash
-npm run ai-tools -- --files content/copilot/tutorials/coding-agent/get-the-best-results.md --refine versioning
+npm run ai-tools -- --files content/copilot/tutorials/cloud-agent/get-the-best-results.md --refine versioning
 ```
 
 Refine intro:
@@ -181,3 +181,5 @@ Add `GITHUB_TOKEN` to `.env` with Models scopes.
 - Add more examples
 - Test in Models UI first
 - Consider different model/parameters
+
+🌎

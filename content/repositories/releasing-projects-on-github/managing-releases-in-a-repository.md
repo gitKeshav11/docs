@@ -15,9 +15,9 @@ versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
-topics:
-  - Repositories
 shortTitle: Manage releases
+category:
+  - Release software
 ---
 ## About release management
 

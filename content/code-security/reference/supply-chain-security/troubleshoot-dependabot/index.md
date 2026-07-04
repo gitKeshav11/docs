@@ -5,21 +5,14 @@ versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
-topics:
-  - Dependabot
-  - Version updates
-  - Repositories
-  - Dependencies
-  - Pull requests
-  - Alerts
-  - Vulnerabilities
 contentType: reference
 children:
-  - /troubleshooting-the-dependency-graph
+  - /dependency-graph-errors
   - /dependabot-updates-stopped
-  - /troubleshooting-dependabot-on-github-actions
-  - /vulnerable-dependency-detection
+  - /dependabot-on-actions
+  - /vulnerability-detection
   - /dependabot-errors
 redirect_from:
   - /code-security/how-tos/secure-your-supply-chain/troubleshoot-dependency-security
 ---
+

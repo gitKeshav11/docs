@@ -5,13 +5,14 @@ intro: Measure the success of a {% data variables.product.prodname_copilot_short
 permissions: '{% data reusables.copilot.usage-metrics-permissions %}'
 versions:
   feature: copilot
-type: tutorial
 allowTitleToDifferFromFilename: true
 category:
   - Copilot usage metrics
   - Measure success
   - Track Copilot usage
   - Manage Copilot for a team
+  - Roll Copilot out at scale
+contentType: tutorials
 ---
 
 When you run a {% data variables.product.prodname_copilot_short %} trial, the key to success is understanding how teams adopt and use {% data variables.product.prodname_copilot_short %}.
@@ -99,7 +100,7 @@ Example response:
 ```json
 {
   "download_links": [
-    "https://example.com/copilot-usage-report.json"
+    "https://example.com/copilot-usage-report.ndjson"
   ],
   "report_start_day": "2025-07-18",
   "report_end_day": "2025-08-14"

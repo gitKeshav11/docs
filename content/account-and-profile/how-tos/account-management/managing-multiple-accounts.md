@@ -3,15 +3,13 @@ title: Managing multiple accounts
 intro: If you use one workstation to contribute to projects for more than one account, you can modify your Git configuration to simplify the contribution process.
 versions:
   feature: multiple-accounts-one-workstation
-topics:
-  - Accounts
-  - Git
-  - GitHub
 shortTitle: Manage multiple accounts
 redirect_from:
   - /account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-your-personal-account/managing-multiple-accounts
   - /account-and-profile/how-tos/setting-up-and-managing-your-personal-account-on-github/managing-your-personal-account/managing-multiple-accounts
 contentType: how-tos
+category:
+  - Change or close your account
 ---
 
 ## Contributing to multiple accounts using HTTPS and {% data variables.product.pat_generic %}s

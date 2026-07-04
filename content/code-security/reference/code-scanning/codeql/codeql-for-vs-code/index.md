@@ -6,18 +6,13 @@ versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
-topics:
-  - Code Security
-  - Code scanning
-  - Vulnerabilities
-  - CodeQL
 contentType: reference
 children:
   - /telemetry-in-codeql-for-visual-studio-code
-  - /accessing-logs
-  - /warning-problem-with-controller-repository
+  - /controller-repository-warning
 redirect_from:
   - /code-security/codeql-for-vs-code/troubleshooting-codeql-for-visual-studio-code
   - /code-security/codeql-for-vs-code/troubleshooting-codeql-for-vs-code
   - /code-security/how-tos/scan-code-for-vulnerabilities/troubleshooting/troubleshooting-codeql-for-vs-code
 ---
+

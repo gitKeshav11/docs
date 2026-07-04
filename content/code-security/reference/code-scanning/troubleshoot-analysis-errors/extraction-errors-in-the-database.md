@@ -1,5 +1,6 @@
 ---
 title: Extraction errors in the database
+shortTitle: Extraction errors
 intro: You can check whether or not extraction errors affect the health of the {% data variables.product.prodname_codeql %} database created.
 allowTitleToDifferFromFilename: true
 versions:
@@ -10,6 +11,8 @@ redirect_from:
   - /code-security/code-scanning/troubleshooting-code-scanning/extraction-errors-in-the-database
   - /code-security/how-tos/scan-code-for-vulnerabilities/troubleshooting/troubleshooting-analysis-errors/extraction-errors-in-the-database
 contentType: reference
+category:
+  - Troubleshoot security tools
 ---
 
 {% data reusables.code-scanning.codeql-action-version-ghes %}

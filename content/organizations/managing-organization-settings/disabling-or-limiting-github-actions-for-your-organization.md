@@ -8,10 +8,9 @@ versions:
   ghes: '*'
   ghec: '*'
 permissions: Organization owners{% ifversion custom-org-roles %} and users with the "Manage organization Actions policies" and "Manage runners and runner groups" fine-grained permissions{% endif %} can enable, disable, and limit {% data variables.product.prodname_actions %} for an organization. {% ifversion custom-org-roles %}<br><br>For more information, see [AUTOTITLE](/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles).{% endif %}
-topics:
-  - Organizations
-  - Teams
 shortTitle: Disable or limit actions
+category:
+  - Configure organization features
 ---
 
 {% data reusables.actions.enterprise-github-hosted-runners %}
@@ -75,6 +74,18 @@ If a repository already has self-hosted runners when you disable their use, thes
    1. Click {% octicon "gear" aria-label="Select repositories" %}.
    1. Select the check boxes for the repositories for which you want to allow self-hosted runners.
    1. Click **Select repositories**.
+
+## Disabling standard hosted runners
+
+You can disable standard {% data variables.product.github %}-hosted runners at the organization level. This setting requires workflows to target runners through runner groups and helps enforce consistent access controls and governance.
+
+For information about job concurrency limits for {% data variables.product.github %}-hosted runners, see [AUTOTITLE](/actions/reference/limits#job-concurrency-limits-for-github-hosted-runners).
+
+{% data reusables.profile.access_org %}
+{% data reusables.profile.org_settings %}
+{% data reusables.organizations.settings-sidebar-actions-general %}
+1. Scroll to the "Standard hosted runners" section and click **Disable for all repositories**.
+1. Click **Save**.
 
 {% ifversion fpt or ghec %}
 

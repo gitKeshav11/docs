@@ -4,6 +4,7 @@ import patterns from '@/frame/lib/patterns'
 import { pathLanguagePrefixed } from '@/languages/lib/languages-server'
 import { deprecatedWithFunctionalRedirects } from '@/versions/lib/enterprise-server-releases'
 import getRedirect from '../lib/get-redirect'
+import { applyGraphqlCategoryRedirect } from '../lib/graphql-category-redirect'
 import {
   defaultCacheControl,
   languageCacheControl,
@@ -18,7 +19,7 @@ export default function handleRedirects(req: ExtendedRequest, res: Response, nex
   // This must be done before checking if the path
   // is an asset (patterns.assetPaths)
   if (req.path.includes('//')) {
-    return res.redirect(301, req.path.replace(/\/+/g, '/'))
+    return res.safeRedirect(301, req.path.replace(/\/+/g, '/'))
   }
 
   // never redirect assets
@@ -41,11 +42,11 @@ export default function handleRedirects(req: ExtendedRequest, res: Response, nex
     }
 
     // Forward query params to the new URL
-    let queryParams = new URLSearchParams((req?.query as any) || '').toString()
+    let queryParams = new URLSearchParams(req?.query as URLSearchParamsTypes).toString()
     if (queryParams) {
       queryParams = `?${queryParams}`
     }
-    return res.redirect(302, redirectPath + queryParams)
+    return res.safeRedirect(302, redirectPath + queryParams)
   }
 
   // begin redirect handling
@@ -80,7 +81,7 @@ export default function handleRedirects(req: ExtendedRequest, res: Response, nex
     }
 
     redirectTo += `/search?${sp.toString()}`
-    return res.redirect(301, redirectTo)
+    return res.safeRedirect(301, redirectTo)
   }
 
   // have to do this now because searchPath replacement changes the path as well as the query params
@@ -95,6 +96,17 @@ export default function handleRedirects(req: ExtendedRequest, res: Response, nex
 
   redirectWithoutQueryParams = redirectTo || redirectWithoutQueryParams
 
+  // Resolve legacy `/graphql/reference/<kind>(#<name>)?` URLs to their
+  // per-category equivalent. Done before query-param re-application so the
+  // fragment parsing in the helper is unambiguous.
+  const graphqlRewrite = applyGraphqlCategoryRedirect(
+    redirectWithoutQueryParams,
+    req.context.userLanguage || 'en',
+  )
+  if (graphqlRewrite) {
+    redirectWithoutQueryParams = graphqlRewrite
+  }
+
   redirect = queryParams ? redirectWithoutQueryParams + queryParams : redirectWithoutQueryParams
 
   if (!redirectTo && !pathLanguagePrefixed(req.path)) {
@@ -107,8 +119,12 @@ export default function handleRedirects(req: ExtendedRequest, res: Response, nex
     // But for example, a `/authentication/connecting-to-github-with-ssh`
     // needs to become `/en/authentication/connecting-to-github-with-ssh`
     const possibleRedirectTo = `/en${req.path}`
+    // Pages are keyed without .md, so strip it before lookup
+    const lookupPath = possibleRedirectTo.endsWith('.md')
+      ? possibleRedirectTo.replace(/\.md$/, '')
+      : possibleRedirectTo
     if (!req.context.pages) throw new Error('req.context.pages not yet set')
-    if (possibleRedirectTo in req.context.pages || isDeprecatedVersion(req.path)) {
+    if (lookupPath in req.context.pages || isDeprecatedVersion(req.path)) {
       const language = getLanguage(req)
 
       // Note, it's important to use `req.url` here and not `req.path`
@@ -127,7 +143,10 @@ export default function handleRedirects(req: ExtendedRequest, res: Response, nex
 
   // do not redirect if the redirected page can't be found
   if (
-    !(req.context.pages[removeQueryParams(redirect)] || isDeprecatedVersion(req.path)) &&
+    !(
+      req.context.pages[removeQueryParams(redirect).replace(/\.md$/, '')] ||
+      isDeprecatedVersion(req.path)
+    ) &&
     !redirect.includes('://')
   ) {
     // display error on the page in development, but not in production
@@ -146,7 +165,7 @@ export default function handleRedirects(req: ExtendedRequest, res: Response, nex
   }
 
   const permanent = redirect.includes('://') || usePermanentRedirect(req)
-  return res.redirect(permanent ? 301 : 302, redirect)
+  return res.safeRedirect(permanent ? 301 : 302, redirect)
 }
 
 function getLanguage(req: ExtendedRequest, default_ = 'en') {

@@ -1,8 +1,8 @@
 ---
-title: Hosting of models for GitHub Copilot Chat
+title: Hosting of models for GitHub Copilot
 shortTitle: Model hosting
 allowTitleToDifferFromFilename: true
-intro: 'Learn how different AI models are hosted for {% data variables.copilot.copilot_chat_short %}.'
+intro: 'Learn how different AI models are hosted for {% data variables.product.prodname_copilot %}.'
 versions:
   feature: copilot
 category:
@@ -16,17 +16,16 @@ contentType: reference
 
 ## OpenAI models
 
+{% data reusables.copilot.gpt-55-promo-period %}
+
 Used for:
 
-* {% data variables.copilot.copilot_gpt_41 %}
 * {% data variables.copilot.copilot_gpt_5_mini %}
-* {% data variables.copilot.copilot_gpt_51 %}
-* {% data variables.copilot.copilot_gpt_51_codex %}
-* {% data variables.copilot.copilot_gpt_51_codex_mini %}
-* {% data variables.copilot.copilot_gpt_51_codex_max %}
-* {% data variables.copilot.copilot_gpt_52 %}
-* {% data variables.copilot.copilot_gpt_52_codex %}
 * {% data variables.copilot.copilot_gpt_53_codex %}
+* {% data variables.copilot.copilot_gpt_54 %}
+* {% data variables.copilot.copilot_gpt_54_mini %}
+* {% data variables.copilot.copilot_gpt_54_nano %}
+* {% data variables.copilot.copilot_gpt_55 %}
 
 These models are hosted by OpenAI and {% data variables.product.github %}'s Azure infrastructure.
 
@@ -41,7 +40,6 @@ All input requests and output responses processed by {% data variables.product.p
 Used for:
 
 * {% data variables.copilot.copilot_raptor_mini %}
-* {% data variables.copilot.copilot_goldeneye %}
 
 These models are deployed on {% data variables.product.github %} managed Azure OpenAI tenant.
 
@@ -51,11 +49,17 @@ Used for:
 
 * {% data variables.copilot.copilot_claude_haiku_45 %}
 * {% data variables.copilot.copilot_claude_sonnet_45 %}
+* {% data variables.copilot.copilot_claude_sonnet_46 %}
+* {% data variables.copilot.copilot_claude_sonnet_5 %}
 * {% data variables.copilot.copilot_claude_opus_45 %}
 * {% data variables.copilot.copilot_claude_opus_46 %}
-* {% data variables.copilot.copilot_claude_opus_46_fast %}
-* {% data variables.copilot.copilot_claude_sonnet_40 %}
-* {% data variables.copilot.copilot_claude_sonnet_46 %}
+* {% data variables.copilot.copilot_claude_opus_47 %}
+* {% data variables.copilot.copilot_claude_opus_48 %}
+* {% data variables.copilot.copilot_claude_opus_48_fast %}
+* {% data variables.copilot.copilot_claude_fable_5 %}
+
+> [!WARNING] 
+> When {% data variables.copilot.copilot_claude_fable_5 %} is used, Anthropic retains data, including prompts and outputs, to operate safety classifiers that detect harmful use. Other Claude models in {% data variables.product.prodname_copilot %} remain covered by {% data variables.product.github %}'s existing data retention agreements, as documented below. Enterprise and business users need to enable the {% data variables.copilot.copilot_claude_fable_5 %} model to make it available for your organization. You can read more about Anthropic's data handling practices for this model under section F of their [Service Specific Terms](https://www.anthropic.com/legal/service-specific-terms).
 
 These models are hosted by Amazon Web Services, Anthropic PBC, and Google Cloud Platform. {% data variables.product.github %} has provider agreements in place to ensure data is not used for training. Additional details for each provider are included below:
 
@@ -74,30 +78,34 @@ When using {% data variables.copilot.copilot_claude %}, input prompts and output
 Used for:
 
 * {% data variables.copilot.copilot_gemini_25_pro %}
-* {% data variables.copilot.copilot_gemini_3_pro %}
 * {% data variables.copilot.copilot_gemini_3_flash %}
 * {% data variables.copilot.copilot_gemini_31_pro %}
+* {% data variables.copilot.copilot_gemini_35_flash %}
 
-{% data variables.product.prodname_copilot %} uses {% data variables.copilot.copilot_gemini_31_pro %}, {% data variables.copilot.copilot_gemini_3_pro %}, {% data variables.copilot.copilot_gemini_3_flash %}, and {% data variables.copilot.copilot_gemini_25_pro %} hosted on Google Cloud Platform (GCP). When using {% data variables.copilot.copilot_gemini %} models, prompts and metadata are sent to GCP, which makes the [following data commitment](https://cloud.google.com/vertex-ai/generative-ai/docs/data-governance): _{% data variables.copilot.copilot_gemini %} doesn't use your prompts, or its responses, as data to train its models._
+{% data variables.product.prodname_copilot %} uses {% data variables.copilot.copilot_gemini_31_pro %}, {% data variables.copilot.copilot_gemini_3_flash %}, and {% data variables.copilot.copilot_gemini_25_pro %} hosted on Google Cloud Platform (GCP). When using {% data variables.copilot.copilot_gemini %} models, prompts and metadata are sent to GCP, which makes the [following data commitment](https://cloud.google.com/vertex-ai/generative-ai/docs/data-governance): _{% data variables.copilot.copilot_gemini %} doesn't use your prompts, or its responses, as data to train its models._
 
 To provide better service quality and reduce latency, {% data variables.product.github %} uses [prompt caching](https://cloud.google.com/vertex-ai/generative-ai/docs/data-governance#customer_data_retention_and_achieving_zero_data_retention).
 
 When using {% data variables.copilot.copilot_gemini %} models, input prompts and output completions continue to run through {% data variables.product.prodname_copilot %}'s content filters for public code matching, when applied, along with those for harmful or offensive content.
 
-## xAI models
+## Microsoft models
 
-These models are hosted on xAI. xAI operates {% data variables.copilot.copilot_grok_code %} in {% data variables.product.prodname_copilot %} under a zero data retention API policy. This means xAI commits that user content (both inputs sent to the model and outputs generated by the model):
+{% data variables.copilot.copilot_mai_code_1_flash %} is a first-party Microsoft model hosted on Azure in {% data variables.product.github %}'s tenant. 
 
-Will **not** be:
-* Logged for any purpose, including human review
-* Saved to disk or retained in any form, including as metadata
-* Accessible by xAI personnel
-* Used for model training
+## Open-weight models
 
-Will **only**:
-* Exist temporarily in RAM for the minimum time required to process and respond to each request
-* Be immediately deleted from memory once the response is delivered
+Open-weight models have publicly available weights. {% data reusables.copilot.open-weight-model-hosting %}
 
-When using xAI, input prompts and output completions continue to run through {% data variables.product.prodname_copilot %}'s content filters for public code matching, when applied, along with those for harmful or offensive content.
+### Moonshot AI models
 
-For more information, see [xAI's enterprise terms of service](https://x.ai/legal/terms-of-service-enterprise) on the xAI website.
+Used for:
+
+* {% data variables.copilot.copilot_kimi_k27_code %}
+
+{% data variables.copilot.copilot_kimi_k27_code %} was developed by Moonshot AI. It is an open-weight model that may be less aligned than other {% data variables.product.prodname_copilot_short %} models, with an elevated risk of producing harmful content. {% data variables.product.github %}'s content filtering applies, but you should review the [{% data variables.copilot.copilot_kimi_k27_code %} model card](https://huggingface.co/moonshotai/Kimi-K2.7-Code) and conduct your own evaluations before enabling it.
+
+When using {% data variables.copilot.copilot_kimi_k27_code %}, input prompts and output completions continue to run through {% data variables.product.prodname_copilot %}'s content filters for public code matching, when applied, along with those for harmful or offensive content.
+
+## Inline suggestions
+
+Inline suggestions, including ghost text and next edit suggestions, are powered by models hosted on Azure for {% data variables.copilot.copilot_business_short %} and {% data variables.copilot.copilot_enterprise_short %} plans. {% data variables.copilot.copilot_free_short %} and {% data variables.copilot.copilot_student_short %} user models are hosted on Fireworks AI.

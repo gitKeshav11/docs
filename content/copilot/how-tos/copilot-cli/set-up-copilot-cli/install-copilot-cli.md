@@ -19,6 +19,8 @@ contentType: how-tos
 category:
   - Configure Copilot # Copilot discovery page
   - Configure Copilot CLI # Copilot CLI bespoke page
+docsTeamMetrics:
+  - copilot-cli
 ---
 
 To find out about {% data variables.copilot.copilot_cli_short %} before you install it, see [AUTOTITLE](/copilot/concepts/agents/about-copilot-cli).
@@ -70,13 +72,13 @@ winget install GitHub.Copilot.Prerelease
 ### Installing with Homebrew (macOS and Linux)
 
 ```shell copy
-brew install copilot-cli
+brew install --cask copilot-cli
 ```
 
 To install the prerelease version:
 
 ```shell copy
-brew install copilot-cli@prerelease
+brew install --cask copilot-cli@prerelease
 ```
 
 ### Installing with the install script (macOS and Linux)
@@ -122,3 +124,5 @@ You can also authenticate using a {% data variables.product.pat_v2 %} with the "
 ## Next steps
 
 You can now use {% data variables.product.prodname_copilot_short %} from the command line. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/use-copilot-cli).
+
+For a list of commands for {% data variables.copilot.copilot_cli_short %}, including the command to update, see [AUTOTITLE](/copilot/reference/copilot-cli-reference/cli-command-reference).
